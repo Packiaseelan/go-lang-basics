@@ -5,13 +5,13 @@ import "fmt"
 type person struct {
 	firstName string
 	lastName  string
-	contact   contactInfo
+	contactInfo
 }
 
 type contactInfo struct {
-	email   string
-	mobile  string
-	address addressInfo
+	email  string
+	mobile string
+	addressInfo
 }
 
 type addressInfo struct {
@@ -24,22 +24,30 @@ type addressInfo struct {
 
 func main() {
 
-	prsn := person{
-		firstName: "Packiaseelan",
-		lastName:  "Socretes",
-		contact: contactInfo{
-			email:  "packiaseelan14@gmail.com",
+	alice := person{
+		firstName: "Alice",
+		lastName:  "Blob",
+		contactInfo: contactInfo{
+			email:  "alice@gmail.com",
 			mobile: "1234567890",
-			address: addressInfo{
-				doorNo:     "C4",
-				flatName:   "Vinayaga flat",
-				streetName: "Pandian Street",
+			addressInfo: addressInfo{
+				doorNo:     "401",
+				flatName:   "Casa Grand",
+				streetName: "ECR",
 				city:       "Chennai",
 				zip:        123456,
 			},
 		},
 	}
 
-	fmt.Println(prsn)
-	fmt.Printf("%+v", prsn)
+	alice.updateName("Jimmy")
+	alice.print()
+}
+
+func (p person) print() {
+	fmt.Printf("%+v", p)
+}
+
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
 }

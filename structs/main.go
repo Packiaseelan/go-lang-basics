@@ -24,8 +24,15 @@ type addressInfo struct {
 
 func main() {
 
-	initializeStruct()
+	//initializeStruct()
 
+	mySlice := []string{"Hi", "There", "How", "Are", "You"}
+	UpdateSlice(mySlice)
+	fmt.Println(mySlice)
+}
+
+func UpdateSlice(s []string) {
+	s[0] = "Bye"
 }
 
 func initializeStruct() {

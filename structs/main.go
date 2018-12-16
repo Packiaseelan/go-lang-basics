@@ -25,7 +25,10 @@ type addressInfo struct {
 func main() {
 
 	//initializeStruct()
+	workingWithSlice()
+}
 
+func workingWithSlice() {
 	mySlice := []string{"Hi", "There", "How", "Are", "You"}
 	UpdateSlice(mySlice)
 	fmt.Println(mySlice)

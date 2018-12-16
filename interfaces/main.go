@@ -5,6 +5,7 @@ import "fmt"
 type bot interface {
 	getGreeting() string
 }
+
 type englishBot struct{}
 type spanishBot struct{}
 
@@ -14,7 +15,6 @@ func main() {
 
 	printGreeting(eb)
 	printGreeting(sb)
-
 }
 
 func printGreeting(b bot) {

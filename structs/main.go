@@ -24,6 +24,11 @@ type addressInfo struct {
 
 func main() {
 
+	initializeStruct()
+
+}
+
+func initializeStruct() {
 	alice := person{
 		firstName: "Alice",
 		lastName:  "Blob",
@@ -48,6 +53,6 @@ func (p person) print() {
 	fmt.Printf("%+v", p)
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (poineterToPerson *person) updateName(newFirstName string) {
+	(*poineterToPerson).firstName = newFirstName
 }
